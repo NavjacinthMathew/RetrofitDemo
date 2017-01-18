@@ -23,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String baseUrl = "nmathew.pe.hu/json/";
+    private String baseUrl = "http://nmathew.pe.hu/json/";
     private Retrofit retrofit;
     private ProgressDialog progressBar;
     private EmployeeAdapter adapter;
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         /*Create handle for the Retrofit interface*/
         GetEmployeeDataService service = retrofit.create(GetEmployeeDataService.class);
 
-        /*Call the method in the interface to get the employee data*/
-        Call<EmployeeList> call = service.getEmployeeData();
+        /*Call the method with parameter in the interface to get the employee data*/
+        Call<EmployeeList> call = service.getEmployeeData(100);
 
         /*Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");
