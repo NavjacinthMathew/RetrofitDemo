@@ -32,9 +32,9 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.Employ
 
     @Override
     public void onBindViewHolder(EmployeeViewHolder holder, int position) {
-        holder.txtEmpName.setText(dataList.get(position).getEmployeeName());
-        holder.txtEmpEmail.setText(dataList.get(position).getEmployeeEmail());
-        holder.txtEmpPhone.setText(dataList.get(position).getEmployeePhone());
+        holder.txtEmpName.setText(dataList.get(position).getName());
+        holder.txtEmpEmail.setText(dataList.get(position).getEmail());
+        holder.txtEmpPhone.setText(dataList.get(position).getPhone());
     }
 
     @Override

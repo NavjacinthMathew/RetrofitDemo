@@ -7,13 +7,13 @@ import java.util.ArrayList;
  */
 
 public class EmployeeList {
-    private ArrayList<Employee> employeeArrayList;
+    private ArrayList<Employee> employeeList;
 
     public ArrayList<Employee> getEmployeeArrayList() {
-        return employeeArrayList;
+        return employeeList;
     }
 
     public void setEmployeeArrayList(ArrayList<Employee> employeeArrayList) {
-        this.employeeArrayList = employeeArrayList;
+        this.employeeList = employeeArrayList;
     }
 }

@@ -5,38 +5,37 @@ package mathew.navjacinth.com.retrofitdemo.model;
  */
 
 public class Employee {
-    private String employeeName;
-    private String employeeEmail;
-    private String employeePhone;
+    private String name;
+    private String email;
+    private String phone;
 
-    /*Getters and setters to access the private members*/
-    public Employee(String employeeName, String employeeEmail, String employeePhone) {
-        this.employeeName = employeeName;
-        this.employeeEmail = employeeEmail;
-        this.employeePhone = employeePhone;
+    public Employee(String name, String email, String phone) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
     }
 
-    public String getEmployeeName() {
-        return employeeName;
+    public String getName() {
+        return name;
     }
 
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getEmployeeEmail() {
-        return employeeEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmployeeEmail(String employeeEmail) {
-        this.employeeEmail = employeeEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getEmployeePhone() {
-        return employeePhone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setEmployeePhone(String employeePhone) {
-        this.employeePhone = employeePhone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
