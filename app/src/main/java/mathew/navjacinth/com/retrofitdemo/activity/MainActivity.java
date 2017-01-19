@@ -38,10 +38,12 @@ public class MainActivity extends AppCompatActivity {
         initProgressBar("Loading Data...Please wait");
 
         /*Retrofit configuration*/
-        retrofit = new Retrofit.Builder()
-                .baseUrl(baseUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        if (retrofit != null) {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(baseUrl)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
 
         /*Create handle for the Retrofit interface*/
         GetEmployeeDataService service = retrofit.create(GetEmployeeDataService.class);
