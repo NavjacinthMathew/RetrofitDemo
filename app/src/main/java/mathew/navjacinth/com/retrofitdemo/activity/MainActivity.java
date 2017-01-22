@@ -12,19 +12,16 @@ import java.util.ArrayList;
 
 import mathew.navjacinth.com.retrofitdemo.R;
 import mathew.navjacinth.com.retrofitdemo.adapter.EmployeeAdapter;
-import mathew.navjacinth.com.retrofitdemo.interfaces.GetEmployeeDataService;
 import mathew.navjacinth.com.retrofitdemo.model.Employee;
 import mathew.navjacinth.com.retrofitdemo.model.EmployeeList;
+import mathew.navjacinth.com.retrofitdemo.network.GetEmployeeDataService;
+import mathew.navjacinth.com.retrofitdemo.network.RetrofitInstance;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String baseUrl = "http://nmathew.pe.hu/json/";
-    private Retrofit retrofit;
     private ProgressDialog progressBar;
     private EmployeeAdapter adapter;
     private RecyclerView recyclerView;
@@ -37,16 +34,8 @@ public class MainActivity extends AppCompatActivity {
         /*Method call to show ProgressBar with a message*/
         initProgressBar("Loading Data...Please wait");
 
-        /*Retrofit configuration*/
-        if (retrofit != null) {
-            retrofit = new Retrofit.Builder()
-                    .baseUrl(baseUrl)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-        }
-
-        /*Create handle for the Retrofit interface*/
-        GetEmployeeDataService service = retrofit.create(GetEmployeeDataService.class);
+        /*Create handle for the RetrofitInstance interface*/
+        GetEmployeeDataService service = RetrofitInstance.getRetrofitInstance().create(GetEmployeeDataService.class);
 
         /*Call the method with parameter in the interface to get the employee data*/
         Call<EmployeeList> call = service.getEmployeeData(100);

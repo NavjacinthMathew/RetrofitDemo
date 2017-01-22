@@ -1,4 +1,4 @@
-package mathew.navjacinth.com.retrofitdemo.interfaces;
+package mathew.navjacinth.com.retrofitdemo.network;
 
 import mathew.navjacinth.com.retrofitdemo.model.EmployeeList;
 import retrofit2.Call;
