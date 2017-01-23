@@ -31,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*Method call to show ProgressBar with a message*/
-        initProgressBar("Loading Data...Please wait");
-
         /*Create handle for the RetrofitInstance interface*/
         GetEmployeeDataService service = RetrofitInstance.getRetrofitInstance().create(GetEmployeeDataService.class);
 
@@ -69,16 +66,5 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         recyclerView.setAdapter(adapter);
-    }
-
-    /*Method to initiate the ProgressBar with a custom message*/
-    private void initProgressBar(String loaderMessage) {
-        progressBar = new ProgressDialog(MainActivity.this);
-        progressBar.setMessage(loaderMessage);
-        progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        progressBar.setCancelable(false);
-        progressBar.setCanceledOnTouchOutside(false);
-        progressBar.setIndeterminate(true);
-        progressBar.show();
     }
 }
