@@ -1,12 +1,17 @@
 package mathew.navjacinth.com.retrofitdemo.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Navjacinth Mathew on 1/18/2017.
  */
 
 public class Employee {
+    @SerializedName("name")
     private String name;
+    @SerializedName("email")
     private String email;
+    @SerializedName("phone")
     private String phone;
 
     public Employee(String name, String email, String phone) {
