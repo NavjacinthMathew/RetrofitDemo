@@ -22,7 +22,6 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ProgressDialog progressBar;
     private EmployeeAdapter adapter;
     private RecyclerView recyclerView;
 
@@ -43,13 +42,11 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<EmployeeList>() {
             @Override
             public void onResponse(Call<EmployeeList> call, Response<EmployeeList> response) {
-                progressBar.dismiss();
                 generateEmployeeList(response.body().getEmployeeArrayList());
             }
 
             @Override
             public void onFailure(Call<EmployeeList> call, Throwable t) {
-                progressBar.dismiss();
                 Toast.makeText(MainActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });
