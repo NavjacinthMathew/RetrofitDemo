@@ -9,8 +9,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstance {
 
-    private static Retrofit retrofit;
+    private static Retrofit retrofit = null;
     private static final String BASE_URL = "http://nmathew.pe.hu/json/";
+
+    private RetrofitInstance() {}
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {
