@@ -10,6 +10,6 @@ import retrofit2.http.Query;
  */
 
 public interface GetEmployeeDataService {
-    @GET("retrofit_demo.php")
+    @GET("retrofit-demo.php")
     Call<EmployeeList> getEmployeeData(@Query("company_no") int companyNo);
 }
