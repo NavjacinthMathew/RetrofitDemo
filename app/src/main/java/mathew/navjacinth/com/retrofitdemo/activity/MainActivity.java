@@ -46,8 +46,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<EmployeeList> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<EmployeeList> call, Throwable throwable) {
+              //  Toast.makeText(MainActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "ERROR: "+throwable.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
